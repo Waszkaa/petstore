@@ -1,4 +1,4 @@
-# Pet Store Management System
+# Pet Store Management System - work hours: 5 
 
 This is a Laravel-based web application for managing pets in a pet store. It interacts with a REST API to perform CRUD operations (Create, Read, Update, Delete) on pets. Users can also upload images for pets and assign categories and tags to them.
 
