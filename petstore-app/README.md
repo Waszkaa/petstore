@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README</title>
+</head>
+<body>
+    <h1>Pet Store Management System</h1>
+    <p>This is a Laravel-based web application for managing pets in a pet store. It interacts with a REST API to perform CRUD operations (Create, Read, Update, Delete) on pets. Users can also upload images for pets and assign categories and tags to them.</p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+    <h2>Features</h2>
+    <ul>
+        <li>List all available pets</li>
+        <li>Search for pets by name, status, category, or tags</li>
+        <li>Create new pets and assign categories and tags</li>
+        <li>Edit existing pets</li>
+        <li>Delete pets</li>
+        <li>Upload images for pets</li>
+        <li>Paginate the list of pets</li>
+    </ul>
 
-## About Laravel
+    <h2>Requirements</h2>
+    <ul>
+        <li>PHP 8.0 or higher</li>
+        <li>Composer</li>
+        <li>Laravel 8.x or higher</li>
+        <li>MySQL</li>
+    </ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    <h2>Installation</h2>
+    <ol>
+        <li>
+            <p><strong>Clone the repository:</strong></p>
+            <pre><code>git clone https://github.com/Waszkaa/petstore.git 
+            cd petstore
+            cd petstore-app
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Install dependencies:</strong></p>
+            <pre><code>composer install</code></pre>
+        </li>
+        <li>
+            <p><strong>Copy the <code>.env</code> file and configure your environment:</strong></p>
+            <pre><code>cp .env.example .env</code></pre>
+            <p>Update your <code>.env</code> file with your database credentials and other necessary configurations.</p>
+        </li>
+        <li>
+            <p><strong>Generate an application key:</strong></p>
+            <pre><code>php artisan key:generate</code></pre>
+        </li>
+        <li>
+            <p><strong>Run the database migrations:</strong></p>
+            <pre><code>php artisan migrate</code></pre>
+        </li>
+        <li>
+            <p><strong>Serve the application:</strong></p>
+            <pre><code>php artisan serve</code></pre>
+        </li>
+        <li>
+            <p><strong>Access the application:</strong></p>
+            <p>Open your browser and go to <code>http://localhost:8000</code>.</p>
+        </li>
+    </ol>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    <h2>API Integration</h2>
+    <p>This application interacts with the <a href="https://petstore.swagger.io/">Swagger Petstore API</a> to manage pets. The following endpoints are used:</p>
+    <ul>
+        <li><code>GET /pet/findByStatus</code>: Retrieve a list of pets by status.</li>
+        <li><code>POST /pet</code>: Create a new pet.</li>
+        <li><code>PUT /pet</code>: Update an existing pet.</li>
+        <li><code>DELETE /pet/{petId}</code>: Delete a pet by ID.</li>
+        <li><code>POST /pet/{petId}/uploadImage</code>: Upload an image for a pet.</li>
+    </ul>
+    <p><strong>Note:</strong> Uploading images to the API does not work because the test endpoint on the API's website also does not add images.</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    <h2>Usage</h2>
+    <h3>Listing Pets</h3>
+    <p>Navigate to the homepage to see a list of available pets. Use the search bar to filter pets by name, status, category, or tags.</p>
 
-## Learning Laravel
+    <h3>Creating a Pet</h3>
+    <ol>
+        <li>Click on "Add Pet".</li>
+        <li>Fill in the required details (name, status, category, tags).</li>
+        <li>Upload an image if desired.</li>
+        <li>Click "Add" to save the pet.</li>
+    </ol>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    <h3>Editing a Pet</h3>
+    <ol>
+        <li>Click on the "Edit" button next to the pet you want to edit.</li>
+        <li>Update the details as needed.</li>
+        <li>Click "Update" to save the changes.</li>
+    </ol>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    <h3>Deleting a Pet</h3>
+    <ol>
+        <li>Click on the "Delete" button next to the pet you want to delete.</li>
+        <li>Confirm the deletion.</li>
+    </ol>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    <h3>Uploading an Image</h3>
+    <ol>
+        <li>Edit a pet to access the image upload form.</li>
+        <li>Choose a file to upload.</li>
+        <li>Click "Upload" to save the image.</li>
+    </ol>
 
-## Laravel Sponsors
+    <h2>Troubleshooting</h2>
+    <p>Check the <code>storage/logs/laravel.log</code> file for any errors or issues.</p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    <h2>License</h2>
+    <p>This project is open-source and available under the <a href="LICENSE">MIT License</a>.</p>
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    <h2>Contributing</h2>
+    <p>Contributions are welcome! Please open an issue or submit a pull request for any bugs or enhancements.</p>
+</body>
+</html>
